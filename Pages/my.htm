@@ -1,0 +1,18 @@
+<body>
+    <div id="choosebar">
+        <a onclick="changeHTML(1)">管理租借 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
+    <hr>
+        <a onclick="changeHTML(2)">账户设置 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
+    <hr>
+    </div>
+
+    <script>
+        function changeHTML(num){
+            if(num === 1){
+                window.location.href = "my-space-set.htm";
+            } else if(num === 2){
+                window.location.href = "my-account-set.htm";
+            }
+        }
+    </script>
+</body>
