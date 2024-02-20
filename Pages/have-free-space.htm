@@ -1,0 +1,61 @@
+<body>
+    <style>
+        table {
+            border-collapse: collapse;
+            display: inline-flex;
+            align-items: center;
+            width: auto;
+            align-self: center;
+            border-radius: 10px;
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        th:hover, td.selected {
+            background-color: #f0daabf0;
+            color: #0f2554;
+            border-radius: 10px;
+        }
+    </style>
+    <h4 style="text-align: center;">请描述您的空余空间</h4>
+    
+    <h5>空间大小</h5>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%;">
+    <table id="space-volume">
+        <tr>
+            <td data-number="1">小型空间<br><hr><img src="../Resource/bag-shopping-solid.svg" width="16px"></td>
+            <td data-number="2">中型空间<br><hr><img src="../Resource/box-solid.svg" width="16px"></td>
+            <td data-number="3">大型空间<br><hr><img src="../Resource/boxes-stacked-solid.svg" width="24px"></td>
+        </tr>
+    </table>
+    </div>
+
+    <h5>空间位置</h5>
+
+    <h5>空间类型</h5>
+
+    <h5>空间描述</h5>
+    
+    <h5>空间价格</h5>
+
+    <script>
+        const Space_Volume = document.querySelectorAll('#space-volume td');
+        let selectedSpaceVolume  = null;
+        var Space_Volume_Selected = 0;
+        Space_Volume.forEach((space) => {
+            space.addEventListener('click', () => {
+                if(selectedSpaceVolume){
+                    selectedSpaceVolume.classList.remove('selected');
+                }
+                selectedSpaceVolume = space;
+                selectedSpaceVolume.classList.add('selected');
+                Space_Volume_Selected = space.getAttribute('data-number');
+            });
+        });
+    </script>
+</body>

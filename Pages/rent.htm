@@ -1,0 +1,65 @@
+<body>
+    <style> 
+        .rent-button {
+        background-color: #f0daabf0;
+        color: white;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        border-width: 5px;
+        border-color: #f0ad5bf0;
+        }
+
+        .rent-button:active {
+        background-color: #f0c15bf0;
+        transform: translateY(4px);
+        }
+
+        .rent-text{
+            color: black;
+            font-size: 18px;
+        }
+
+        hr {
+        border: none;
+        border-top: 3px double #333;
+        color: #333;
+        overflow: visible;
+        text-align: center;
+        height: 5px;
+        }
+    </style>
+    <div id="button-div" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%; height:100%;">
+        <button onclick="delay_button_change(1)" class="rent-button" id="button-borrow" style="width: 70%; max-width: 300px; height: 150px; border-radius: 25px; margin-bottom: 45px;">
+            <img src="../Resource/download.svg" width="30px">
+            <br><p class="rent-text">我需要空间</p>
+        </button>
+        <button onclick="delay_button_change(2)" class="rent-button" id="button-rent" style="width: 70%; max-width: 300px; height: 150px; border-radius: 25px; margin-bottom: 10px;">
+            <img src="../Resource/upload.svg" width="30px">
+            <br><p class="rent-text">我有空余空间</p>
+        </button>
+        <hr />
+        <a style="font-size: 20px" onclick="changeHTML(1)">管理租借 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
+    </div>
+
+    <script>
+        function changeHTML(num){
+            if(num === 1){
+                window.location.href = "my-space-set.htm";
+            }
+        }
+        function delay_button_change(choice = 0){
+            setTimeout(function(){
+                button_change(choice)
+            } ,110);
+        }
+        function button_change(choice){
+            if(choice === 2){
+                window.location.href = "have-free-space.htm";
+            }
+            else if(choice === 1){
+                window.location.href = "need-free-space.htm";
+            }
+        }
+    </script>
+</body>

@@ -56,30 +56,3 @@ body {
   #navbar #option3:hover {
     background-color: #F4E2DE66;
   }
-
-  
-#choosebar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 1;
-    display: none;
-}
-#choosebar a {
-    display: block;
-    padding: 10px;
-    font-size: 20px;
-    text-decoration: none;
-    color: black;
-}
-#choosebar a:hover {
-    background-color: #f1f1f1;
-}
-#choosebar hr {
-    margin: 0;
-    border: 0;
-    border-top: 1px solid #f1f1f1;
-}
