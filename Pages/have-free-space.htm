@@ -21,6 +21,20 @@
             color: #0f2554;
             border-radius: 10px;
         }
+
+        button:active {
+        background-color: #a0a0a0f0;
+        transform: translateY(2px);
+        }
+
+        a {
+            text-decoration: none; /* 去掉链接文字的下划线 */
+            color: #ffa000;
+        }
+        a:visited {
+            color: #ffae00; /* 设置链接文字点击后的颜色 */
+        }
+
     </style>
     <h4 style="text-align: center;">请描述您的空余空间</h4>
     
@@ -30,18 +44,77 @@
         <tr>
             <td data-number="1">小型空间<br><hr><img src="../Resource/bag-shopping-solid.svg" width="16px"></td>
             <td data-number="2">中型空间<br><hr><img src="../Resource/box-solid.svg" width="16px"></td>
-            <td data-number="3">大型空间<br><hr><img src="../Resource/boxes-stacked-solid.svg" width="24px"></td>
+            <td data-number="3">大型空间<br><hr><img src="../Resource/warehouse-solid.svg" width="20px"></td>
         </tr>
     </table>
     </div>
 
     <h5>空间位置</h5>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%;">
+    <button style="width: 70%; max-width: 300px; height: 150px; border-radius: 18px; margin-bottom: 10px; background-color: #ffffff00">
+        <img src="../Resource/map-location-dot-solid.svg" width="40px">
+        <br><p style="color: black; font-size: 14px">选择位置</p>
+    </button>
+    </div>
 
     <h5>空间类型</h5>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%; margin-bottom: 15px;">
+        <table id="space-type-1">
+            <tr>
+                <td data-number="1">开放空间<br><hr><img src="../Resource/truck-ramp-box-solid.svg" width="22px"></td>
+                <td data-number="2">集中堆放<br><hr><img src="../Resource/boxes-stacked-solid.svg" width="20px"></td>
+                <td data-number="3">单独控制<br><hr><img src="../Resource/folder-tree-solid.svg" width="20px"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%; margin-bottom: 15px; margin-top: 15px;">
+        <table id="space-type-2">
+            <tr>
+                <td data-number="1">室外环境<br><hr><img src="../Resource/cloud-sun-rain-solid.svg" width="20px"></td>
+                <td data-number="2">室内常温环境<br><hr><img src="../Resource/house-solid.svg" width="16px"></td>
+                <td data-number="3">冷冻环境<br><hr><img src="../Resource/snowflake-solid.svg" width="15px"></td>
+            </tr>
+        </table>
+    </div>
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%; margin-top: 15px;">
+        <table id="accept_storage_cab">
+            <tr>
+                <td><p style="font-size: 14px;"><img src="../Resource/house-medical-circle-check-solid.svg" width="16px">  接收放置官方提供的储存柜 <sub><a href="about-storage_cab.htm">了解详情</a></sub></p></td>
+            </tr>
+        </table>
+    </div>
 
     <h5>空间描述</h5>
-    
+    <div class="input-container" style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%;">
+        <textarea rows="4" cols="50" id="subscribe" style="margin-top: 5px; margin-bottom: 5px; display: flex; flex-direction: column; align-items: center; justify-content: center; border-radius: 10px;"></textarea>
+    </div>
+
     <h5>空间价格</h5>
+    <label>
+    <div class="input-container" style="display: flex; align-items: center; justify-content: center; width:100%;">
+        <input type="number" id="price" style="margin-top: 5px; margin-bottom: 5px;width:20%; max-width: 300px; height: 30px;">
+        &emsp;
+        <select id="per" style="height: 30px;">
+            <option value="day">人民币元/天</option>
+            <option value="week">人民币元/周</option>
+            <option value="month">人民币元/月</option>
+        </select>
+    </div>
+    </label>
+
+    <br>
+    &emsp;
+
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; width:100%;">
+    <button onclick="subscribe()" style="width: 60; height: 30px; border-radius: 5px; margin-bottom: 10px; background-color: #ffffff00">提交</button>
+    </div>
+
+    &emsp;<br>
+    &emsp;<br>
+    &emsp;<br>
+
 
     <script>
         const Space_Volume = document.querySelectorAll('#space-volume td');
@@ -57,5 +130,9 @@
                 Space_Volume_Selected = space.getAttribute('data-number');
             });
         });
+
+        function subscribe(){
+            location.reload();
+        }
     </script>
 </body>
