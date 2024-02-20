@@ -72,8 +72,8 @@
         <table id="space-type-2">
             <tr>
                 <td data-number="1">室外环境<br><hr><img src="../Resource/cloud-sun-rain-solid.svg" width="20px"></td>
-                <td data-number="2">室内常温环境<br><hr><img src="../Resource/house-solid.svg" width="16px"></td>
-                <td data-number="3">冷冻环境<br><hr><img src="../Resource/snowflake-solid.svg" width="15px"></td>
+                <td data-number="2">室内常温<br><hr><img src="../Resource/house-solid.svg" width="16px"></td>
+                <td data-number="3">低温环境<br><hr><img src="../Resource/snowflake-solid.svg" width="15px"></td>
             </tr>
         </table>
     </div>
@@ -130,6 +130,49 @@
                 Space_Volume_Selected = space.getAttribute('data-number');
             });
         });
+
+        const Space_Type_1 = document.querySelectorAll('#space-type-1 td');
+        let selectedSpaceType1 = null;
+        var Space_Type_1_Selected = 0;
+        Space_Type_1.forEach((space) => {
+            space.addEventListener('click', () => {
+                if(selectedSpaceType1){
+                    selectedSpaceType1.classList.remove('selected');
+                }
+                selectedSpaceType1 = space;
+                selectedSpaceType1.classList.add('selected');
+                Space_Type_1_Selected = space.getAttribute('data-number');
+            });
+        });
+
+        const Space_Type_2 = document.querySelectorAll('#space-type-2 td');
+        let selectedSpaceType2 = null;
+        var Space_Type_2_Selected = 0;
+        Space_Type_2.forEach((space) => {
+            space.addEventListener('click', () => {
+                if(selectedSpaceType2){
+                    selectedSpaceType2.classList.remove('selected');
+                }
+                selectedSpaceType2 = space;
+                selectedSpaceType2.classList.add('selected');
+                Space_Type_2_Selected = space.getAttribute('data-number');
+            });
+        });
+
+        const accept_storage_cab = document.querySelectorAll('#accept_storage_cab td');
+        let selected_accept_storage_cab = null;
+        var accept_storage_cab_Selected = 0;
+        accept_storage_cab.forEach((space) => {
+            space.addEventListener('click', () => {
+                if(selected_accept_storage_cab){
+                    selected_accept_storage_cab.classList.remove('selected');
+                }
+                selected_accept_storage_cab = space;
+                selected_accept_storage_cab.classList.add('selected');
+                accept_storage_cab_Selected = 1;
+            });
+        });
+
 
         function subscribe(){
             location.reload();

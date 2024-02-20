@@ -1,9 +1,6 @@
-<body>
+<body style="height: 100%;">
     <style>
         #choosebar {
-            position: fixed;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             background-color: white;
@@ -25,9 +22,15 @@
             border-top: 1px solid #f1f1f1;
         }
     </style>
-    <div id="choosebar">
-        <!--<img src="../Resource/420px-Transparent_Akkarin.webp" width="50" height="50">&emsp;&emsp;<a style="color: black;">点击登录</a>-->
-    <hr>
+
+    <div style="display: flex; align-items: center; height: 100px;">
+        <div style="display: flex; align-items: center;" onclick="login()">
+            <img src="../Resource/420px-Transparent_Akkarin.webp" width="50" height="50">&emsp;&emsp;<a style="color: black;">点击登录</a>
+        </div>
+    </div>
+    <hr><br>
+
+    <div id="choosebar" style="width: 75%; height: 360px;">
         <a onclick="changeHTML(1)">管理租借 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
     <hr>
         <a onclick="changeHTML(2)">账户设置 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
@@ -42,5 +45,7 @@
                 window.location.href = "my-account-set.htm";
             }
         }
+
+        function login(){};
     </script>
 </body>
