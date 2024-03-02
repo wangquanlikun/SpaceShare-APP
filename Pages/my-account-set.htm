@@ -1,0 +1,44 @@
+<body>
+    <style>
+        .choosebar {
+            width: 100%;
+            height: 100%;
+            background-color: white;
+            z-index: 1;
+        }
+        .choosebar a {
+            display: block;
+            padding: 10px;
+            font-size: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        .choosebar a:hover {
+            background-color: #f1f1f1;
+        }
+        .choosebar hr {
+            margin: 0;
+            border: 0;
+            border-top: 1px solid #f1f1f1;
+        }
+    </style>
+
+    <div class="choosebar" style="width: 75%; height: 360px;">
+    <hr>
+        <a onclick="accountset(1)">我的租借 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
+    <hr>
+        <a onclick="accountset(2)">退出登录 <img src="../Resource/chevron-right-solid.svg" height="15px"></a>
+    <hr>
+    </div>
+
+    <script>
+        function accountset(num){
+            if(num === 1){
+                window.location.href = "my-space-set.htm";
+            } else if(num === 2){
+                document.cookie = "username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+                window.location.href = "my.htm";
+            }
+        }
+    </script>
+</body>
